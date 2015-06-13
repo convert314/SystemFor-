@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace ChainSystem
 {
-    public interface IEffectable
+    public interface IEffectable : IGameObject, IObservable<News>
     {
+        IGameObject Owner { get; }
+        Boolean IsExecutable(News news);
+        void Execute(News news, IGameObject obj);
+        IEffectable[] PartialEffects { get; }
+        Boolean IsPartialExecutable(News news, out Int64 index);
     }
 }
