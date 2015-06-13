@@ -59,14 +59,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dice.cs" />
     <Compile Include="IEffectable.cs" />
     <Compile Include="IGameObject.cs" />
     <Compile Include="IHomoSapiens.cs" />
     <Compile Include="IMartialArts.cs" />
+    <Compile Include="IPhase.cs" />
+    <Compile Include="IScheduler.cs" />
     <Compile Include="ISkill.cs" />
     <Compile Include="IStand.cs" />
+    <Compile Include="IStep.cs" />
     <Compile Include="ITool.cs" />
     <Compile Include="News.cs" />
+    <Compile Include="ResistanceESP.cs" />
+    <Compile Include="SexualTendency.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
