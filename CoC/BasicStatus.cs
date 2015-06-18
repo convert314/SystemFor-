@@ -340,7 +340,7 @@ namespace CoC
         public Int16 Idea { get { return _advanced.Idea; } set { _advanced.Idea = value; } }
         public Int16 Luck { get { return _advanced.Luck; } set { _advanced.Luck = value; } }
         public Int16 Knowledge { get { return _advanced.Knowledge; } set { _advanced.Knowledge = value; } }
-        public Dice DamageBonnus { get { return _advanced.DamageBonus; } set { _advanced.DamageBonus = value; } }
+        public Dice DamageBonus { get { return _advanced.DamageBonus; } set { _advanced.DamageBonus = value; } }
         public Int16 MaxHitPoint { get { return _advanced.MaxHitPoint; } set { _advanced.MaxHitPoint = value; } }
         public Int16 HitPoint { get { return _advanced.HitPoint; } set { _advanced.HitPoint = value; } }
         public Int16 MaxMagicPoint { get { return _advanced.MaxMagicPoint; } set { _advanced.MaxMagicPoint = value; } }

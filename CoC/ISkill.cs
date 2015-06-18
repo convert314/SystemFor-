@@ -13,5 +13,6 @@ namespace CoC
         Byte Star { get; }
         Boolean IsSuccess();
         IEffectable Effect { get; }
+        void LevelUp();
     }
 }

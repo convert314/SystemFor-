@@ -28,23 +28,39 @@ namespace CoC
 
         Boolean ISkill.IsSuccess()
         {
-            throw new NotImplementedException();
+            var res = Dice.D1D100.Cast();
+            if (res <= 5)
+            {
+                _star++;
+                LevelUp();
+            }
+            return res <= _experience;
         }
 
         IEffectable ISkill.Effect
         {
-            get { throw new NotImplementedException(); }
+            get { return new DefaultEffect(); }
         }
-    
 
-int ISkill.Experience
-{
-	get { throw new NotImplementedException(); }
-}
-
-byte ISkill.Star
-{
-	get { throw new NotImplementedException(); }
-}
-}
+        public void LevelUp()
+        {
+            var level = _experience / 100;
+            if (level < 0)
+            {
+                _experience += _star;
+                _star = 0;
+            }
+            else if (_star > level + 1)
+            {
+                if (Dice.D1D100.Cast() <= 100 - (_experience % 100))
+                {
+                    _experience++;
+                    _star -= (Byte)(level + 2);
+                }
+                else {
+                    _star = (Byte)(level + 1);
+                }
+            }
+        }
+    }
 }
