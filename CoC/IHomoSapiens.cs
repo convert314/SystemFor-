@@ -20,11 +20,19 @@ namespace CoC
         Int16 Constitution { get; set; }
         Int16 Dexterity { get; set; }
         Int16 Appearance { get; set; }
+        Int16 Power { get; set; }
         Int16 Education { get; set; }
         Int16 Size { get; set; }
 
         Int16 Luck { get; set; }
         Int16 Idea { get; set; }
         Int16 Knowledge { get; set; }
+
+        Dice DamageBonus { get; set; }
+
+        Int64 Age { get; set; }
+        String Occupation { get; set; }
+        String School { get; set; }
+        String BirthPlace { get; set; }
     }
 }
