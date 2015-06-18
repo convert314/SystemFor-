@@ -29,7 +29,7 @@ namespace CoC
             _school = SCHOOL;
             _birthPlace = BIRTHPLACE;
         }
-        public BasicStatus(FundamentalStatus fundamental, AdvancedStatus advanced, Sex SEX, Int64 AGE, String OCCUPATION, String SCHOOL, String BIRTHPLACE) {
+        protected internal BasicStatus(FundamentalStatus fundamental, AdvancedStatus advanced, Sex SEX, Int64 AGE, String OCCUPATION, String SCHOOL, String BIRTHPLACE) {
             _fundamental = fundamental;
             _advanced = advanced;
             _age = AGE;
@@ -125,7 +125,7 @@ namespace CoC
         /// <summary>
         /// 【筋力】【敏捷】【知能】【健康】【魅力】【精神力】【体格】【教養】
         /// </summary>
-        private FundamentalStatus _fundamental;
+        protected FundamentalStatus _fundamental;
 
         protected internal class AdvancedStatus
         {
@@ -273,7 +273,7 @@ namespace CoC
         /// <summary>
         /// 【アイデア】【幸運】【知識】【ダメージボーナス】【耐久値上限】【耐久値】【MP上限】【MP】【SAN値上限】【SAN値】
         /// </summary>
-        private AdvancedStatus _advanced;
+        protected internal AdvancedStatus _advanced;
 
         /// <summary>
         /// 無性、単性、男性、女性、第三性、トランスジェンダー（生まれつきの体は男性）、トランスジェンダー（生まれつきの体は女性）、男性仮性半陰陽、女性仮性半陰陽

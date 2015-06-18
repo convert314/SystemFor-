@@ -8,5 +8,10 @@ namespace CoC
 {
     public interface ISkill
     {
+        String Name { get; }
+        Int32 Experience { get; }
+        Byte Star { get; }
+        Boolean IsSuccess();
+        IEffectable Effect { get; }
     }
 }
