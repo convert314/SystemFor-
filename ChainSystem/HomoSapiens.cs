@@ -102,17 +102,14 @@ namespace CoC.ChainSystem
         {
             return _name;
         }
-
         string IGameObject.GetDescritption(long securityClearance)
         {
             return String.Empty;
         }
-
         bool IGameObject.HasAttribute(string name, long securityClearance)
         {
-            throw new NotImplementedException();
+            return (!String.IsNullOrEmpty(name)) && (name.ToLower() == "age" || _dict1.ContainsKey(name) || _dict2.ContainsKey(name));
         }
-
         Object IGameObject.GetAttribute(String name, Int64 securityClearance)
         {
             if (String.IsNullOrEmpty(name)) throw new ArgumentException();
@@ -121,7 +118,6 @@ namespace CoC.ChainSystem
             else if (name.ToLower() == "age") return Age;
             throw new ArgumentException();
         }
-
         IDisposable IObservable<News>.Subscribe(IObserver<News> observer)
         {
             throw new NotImplementedException();

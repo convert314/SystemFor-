@@ -9,6 +9,7 @@ namespace CoC
     public interface ISkill
     {
         String Name { get; }
+        String Description { get; }
         Int32 Experience { get; }
         Byte Star { get; }
         Boolean IsSuccess();
