@@ -30,24 +30,24 @@ namespace CoC.Skill
             _effect = effect;
         }
 
-        string ISkill.Name
+        public string Name
         {
             get { return _name ?? String.Empty; }
         }
 
         public String Description { get { return _description ?? String.Empty; } }
 
-        Int32 ISkill.Experience
+        public Int32 Experience
         {
             get { return _experience; }
         }
 
-        Byte ISkill.Star
+        public Byte Star
         {
             get { return _star; }
         }
 
-        Boolean ISkill.IsSuccess()
+        public Boolean IsSuccess()
         {
             var res = Dice.D1D100.Cast();
             if (res <= 5)
@@ -58,9 +58,9 @@ namespace CoC.Skill
             return res <= _experience;
         }
 
-        IEffectable ISkill.Effect
+        public IEffectable Effect
         {
-            get { return _effect ?? new DefaultEffect(); }
+            get { return _effect ?? DefaultEffect.Instance; }
         }
 
         public void LevelUp()

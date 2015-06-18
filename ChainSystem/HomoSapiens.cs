@@ -98,19 +98,19 @@ namespace CoC.ChainSystem
             #endregion
         }
 
-        string IGameObject.GetName(long securityClearance)
+        public string GetName(long securityClearance)
         {
             return _name;
         }
-        string IGameObject.GetDescritption(long securityClearance)
+        public string GetDescritption(long securityClearance)
         {
             return String.Empty;
         }
-        bool IGameObject.HasAttribute(string name, long securityClearance)
+        public bool HasAttribute(string name, long securityClearance)
         {
             return (!String.IsNullOrEmpty(name)) && (name.ToLower() == "age" || _dict1.ContainsKey(name) || _dict2.ContainsKey(name));
         }
-        Object IGameObject.GetAttribute(String name, Int64 securityClearance)
+        public Object GetAttribute(String name, Int64 securityClearance)
         {
             if (String.IsNullOrEmpty(name)) throw new ArgumentException();
             if (_dict2.ContainsKey(name)) return _dict2[name];
@@ -118,7 +118,7 @@ namespace CoC.ChainSystem
             else if (name.ToLower() == "age") return Age;
             throw new ArgumentException();
         }
-        IDisposable IObservable<News>.Subscribe(IObserver<News> observer)
+        public IDisposable Subscribe(IObserver<News> observer)
         {
             throw new NotImplementedException();
         }

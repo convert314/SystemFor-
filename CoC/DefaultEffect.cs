@@ -6,61 +6,69 @@ using System.Threading.Tasks;
 
 namespace CoC
 {
-    class DefaultEffect : IEffectable
+    public sealed class DefaultEffect : IEffectable
     {
-        IGameObject IEffectable.Owner
+        private static readonly DefaultEffect _instance = new DefaultEffect();
+
+        private DefaultEffect() { }
+
+        public static DefaultEffect Instance
+        {
+            get { return _instance; }
+        }
+
+        public IGameObject Owner
         {
             get { return null; }
         }
 
-        bool IEffectable.IsExecutable(News news)
+        public bool IsExecutable(News news)
         {
             return true;
         }
 
-        void IEffectable.Execute(News news, IGameObject obj)
+        public void Execute(News news, IGameObject obj)
         {
             return;
         }
 
-        IEffectable[] IEffectable.PartialEffects
+        public IEffectable[] PartialEffects
         {
             get { return null; }
         }
 
-        bool IEffectable.IsPartialExecutable(News news, out long index)
+        public bool IsPartialExecutable(News news, out long index)
         {
             index = -1;
             return false;
         }
 
-        string IGameObject.GetName(long securityClearance)
+        public string GetName(long securityClearance)
         {
             return String.Empty;
         }
 
-        string IGameObject.Name
+        public string Name
         {
             get { return String.Empty; }
         }
 
-        string IGameObject.GetDescritption(long securityClearance)
+        public string GetDescritption(long securityClearance)
         {
             return String.Empty;
         }
 
-        bool IGameObject.HasAttribute(string name, long securityClearance)
+        public bool HasAttribute(string name, long securityClearance)
         {
             return false;
         }
 
-        IDisposable IObservable<News>.Subscribe(IObserver<News> observer)
+        public IDisposable Subscribe(IObserver<News> observer)
         {
             return System.Reactive.Disposables.Disposable.Empty;
         }
 
-
-        object IGameObject.GetAttribute(string name, long securityClearance)
+        public object GetAttribute(string name, long securityClearance)
         {
             return null;
         }

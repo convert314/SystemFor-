@@ -59,9 +59,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Accounting.cs" />
+    <Compile Include="Anthropology.cs" />
+    <Compile Include="Archaeology.cs" />
+    <Compile Include="Art.cs" />
+    <Compile Include="Astronomy.cs" />
+    <Compile Include="Bargain.cs" />
     <Compile Include="BasicStatus.cs" />
+    <Compile Include="Biology.cs" />
+    <Compile Include="Chemistry.cs" />
+    <Compile Include="Climb.cs" />
+    <Compile Include="Conceal.cs" />
+    <Compile Include="Craft.cs" />
+    <Compile Include="CreditRating.cs" />
+    <Compile Include="CthulhuMythos.cs" />
     <Compile Include="DefaultEffect.cs" />
     <Compile Include="Dice.cs" />
+    <Compile Include="Disguise.cs" />
+    <Compile Include="Dodge.cs" />
+    <Compile Include="DriveAutomobile.cs" />
+    <Compile Include="ElectricalRepair.cs" />
+    <Compile Include="FastTalk.cs" />
+    <Compile Include="FirstAid.cs" />
+    <Compile Include="Fist.cs" />
+    <Compile Include="Geology.cs" />
     <Compile Include="IEffectable.cs" />
     <Compile Include="IGameObject.cs" />
     <Compile Include="IHomoSapiens.cs" />
