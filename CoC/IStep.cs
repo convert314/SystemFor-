@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChainSystem
+namespace CoC
 {
-    public sealed class ResistanceESP
+    interface IStep
     {
-
     }
 }

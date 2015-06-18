@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChainSystem
+namespace CoC
 {
-    interface IScheduler
+    public interface IMartialArts
     {
     }
 }

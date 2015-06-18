@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoC
 {
-    public interface IStand
+    interface IPhase
     {
     }
 }
