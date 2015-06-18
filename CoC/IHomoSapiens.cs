@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoC
 {
-    public interface IHomoSapiens
+    public interface IHomoSapiens : IGameObject
     {
         Int16 MaxHitPoint { get; set; }
         Int16 HitPoint { get; set; }

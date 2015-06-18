@@ -54,14 +54,15 @@ namespace CoC
             return false;
         }
 
-        T IGameObject.GetAttribute<T>(string name, long securityClearance)
-        {
-            return default(T);
-        }
-
         IDisposable IObservable<News>.Subscribe(IObserver<News> observer)
         {
             return System.Reactive.Disposables.Disposable.Empty;
+        }
+
+
+        object IGameObject.GetAttribute(string name, long securityClearance)
+        {
+            return null;
         }
     }
 }

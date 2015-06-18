@@ -12,6 +12,6 @@ namespace CoC
         String Name { get; }
         String GetDescritption(Int64 securityClearance);
         Boolean HasAttribute(String name, Int64 securityClearance);
-        T GetAttribute<T>(String name, Int64 securityClearance);
+        Object GetAttribute(String name, Int64 securityClearance);
     }
 }
