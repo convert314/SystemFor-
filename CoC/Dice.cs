@@ -274,6 +274,53 @@ namespace Coc
             return answer;
         }
 
+        public static Int64 Cast(Int64 count, Byte range, Int64 constant, DiceCast diceCast) {
+            var answer = Cast(count, range) + constant;
+            switch (diceCast)
+            {
+                case DiceCast.ApproveMinus:
+                    return answer;
+                case DiceCast.NotMinus:
+                    return answer >= 0 ? answer : 0;
+                case DiceCast.OverZero:
+                    return answer > 0 ? answer : 1;
+            }
+            return answer;
+        }
+        public static Int64 Cast(Int64 count, Byte range, DiceCast diceCast) {
+            var answer = Cast(count, range);
+            switch (diceCast) {
+                case DiceCast.ApproveMinus:
+                    return answer;
+                case DiceCast.NotMinus:
+                    return answer >= 0 ? answer : 0;
+                case DiceCast.OverZero:
+                    return answer > 0 ? answer : 1;
+            }
+            return answer;
+        }
+        public static Int64 Cast(Int64 count, Byte range, Int64 constant) {
+            return Cast(count, range) + constant;
+        }
+        public static Int64 Cast(Int64 count, Byte range)
+        {
+            Int64 answer = 0;
+            var random = new Random();
+            if (count > 0)
+            {
+                for (Int64 i = 0; i < count; i++)
+                {
+                    answer += random.Next(range) + 1;
+                }
+            }
+            else if(count < 0) {
+                for (Int16 i = 0; i < -count; i++) {
+                    answer -= random.Next(range) + 1;
+                }
+            }
+            return answer;
+        }
+
         #region Operator
         public static Dice operator +(Dice obj0, Dice obj1)
         {
