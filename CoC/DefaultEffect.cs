@@ -48,7 +48,7 @@ namespace CoC
             return String.Empty;
         }
 
-        public string Name
+        public string Id
         {
             get { return String.Empty; }
         }

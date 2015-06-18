@@ -18,25 +18,25 @@ namespace CoC
             _advanced = new AdvancedStatus(_fundamental);
             _age = Dice.Cast(1, (Byte)(80 - _fundamental.Education), _fundamental.Education);
         }
-        public BasicStatus(Int16 STR, Int16 DEX, Int16 INT, Int16 CON, Int16 APP, Int16 POW, Int16 SIZ, Int16 EDU,
-            Int16 IDEA, Int16 LUCK, Int16 KNOWLEDGE, Dice DB, Int16 MaxHP, Int16 HP, Int16 MaxMP, Int16 MP, Int16 MaxSAN, Int16 SAN,
-            Sex SEX, Int64 AGE, String OCCUPATION, String SCHOOL, String BIRTHPLACE) {
-            _fundamental = new FundamentalStatus(STR, DEX, INT, CON, APP, POW, SIZ, EDU);
-            _advanced = new AdvancedStatus(IDEA, LUCK, KNOWLEDGE, DB, MaxHP, HP, MaxMP, MP, MaxSAN, SAN);
-            _sexuality = SEX;
-            _age = AGE;
-            _occupation = OCCUPATION;
-            _school = SCHOOL;
-            _birthPlace = BIRTHPLACE;
+        public BasicStatus(Int16 strength, Int16 dexterity, Int16 intelligence, Int16 constitution, Int16 appearance, Int16 power, Int16 size, Int16 education,
+            Int16 idea, Int16 luck, Int16 knowledge, Dice damageBonus, Int16 maxHitPoint, Int16 hitPoint, Int16 maxMagicPoint, Int16 magicPoint, Int16 maxSanityPoint, Int16 sanityPoint,
+            Sex sexuality, Int64 age, String occupation, String school, String birthPlace) {
+            _fundamental = new FundamentalStatus(strength, dexterity, intelligence, constitution, appearance, power, size, education);
+            _advanced = new AdvancedStatus(idea, luck, knowledge, damageBonus, maxHitPoint, hitPoint, maxMagicPoint, magicPoint, maxSanityPoint, sanityPoint);
+            _sexuality = sexuality;
+            _age = age;
+            _occupation = occupation;
+            _school = school;
+            _birthPlace = birthPlace;
         }
-        protected internal BasicStatus(FundamentalStatus fundamental, AdvancedStatus advanced, Sex SEX, Int64 AGE, String OCCUPATION, String SCHOOL, String BIRTHPLACE) {
+        protected internal BasicStatus(FundamentalStatus fundamental, AdvancedStatus advanced, Sex sexuality, Int64 age, String occupation, String school, String birthPlace) {
             _fundamental = fundamental;
             _advanced = advanced;
-            _age = AGE;
-            _sexuality = SEX;
-            _occupation = OCCUPATION;
-            _school = SCHOOL;
-            _birthPlace = BIRTHPLACE;
+            _age = age;
+            _sexuality = sexuality;
+            _occupation = occupation;
+            _school = school;
+            _birthPlace = birthPlace;
         }
 
 
@@ -197,7 +197,17 @@ namespace CoC
                 _idea = (Int16)(5 * fund.Intelligence);
                 _luck = (Int16)(5 * fund.Appearance);
                 _knowledge = (Int16)(5 * fund.Education);
-                #region Damage Bonusの算出
+                //Damage Bonusの算出
+                CalculateDamageBonus(fund);
+
+                _hitPoint = _maxHitPoint = (Int16)(Math.Ceiling((Double)(fund.Constitution + fund.Size) * 0.5));
+                _magicPoint = _maxMagicPoint = fund.Power;
+                _maxSanityPoint = 99;
+                _sanityPoint = (Int16)(5 * fund.Power);
+            }
+
+            private void CalculateDamageBonus(FundamentalStatus fund)
+            {
                 var strsiz = fund.Strength + fund.Size;
                 if (strsiz >= 2 && strsiz <= 12)
                     _damageBonus = new Dice(-1, 6);
@@ -207,7 +217,7 @@ namespace CoC
                     _damageBonus = new Dice();
                 else if (strsiz > 24 && strsiz <= 32)
                     _damageBonus = new Dice(1, 4);
-                else if(strsiz > 32)
+                else if (strsiz > 32)
                 {
                     {
                         var level = (strsiz - 33) / 8;
@@ -239,13 +249,6 @@ namespace CoC
                         }
                     }
                 }
-#endregion
-                _maxHitPoint = (Int16)(Math.Ceiling((Double)(fund.Constitution + fund.Size) * 0.5));
-                _hitPoint = _maxHitPoint;
-                _maxMagicPoint = fund.Power;
-                _magicPoint = _maxMagicPoint;
-                _maxSanityPoint = 99;
-                _sanityPoint = (Int16)(5 * fund.Power);
             }
             public AdvancedStatus(
                 Int16 idea,

@@ -11,7 +11,7 @@ namespace CoC.ChainSystem
     {
         private String _name;
 
-        public String Name
+        public String Id
         {
             get { return _name; }
             set { _name = value; }
@@ -22,16 +22,16 @@ namespace CoC.ChainSystem
         {
             _name = String.Empty;
         }
-        public HomoSapiens(String NAME, Int16 STR, Int16 DEX, Int16 INT, Int16 CON, Int16 APP, Int16 POW, Int16 SIZ, Int16 EDU,
-            Int16 IDEA, Int16 LUCK, Int16 KNOWLEDGE, Dice DB,
-            Int16 MaxHP, Int16 HP, Int16 MaxMP, Int16 MP, Int16 MaxSAN, Int16 SAN,
-            Sex SEX, Int64 AGE, String OCCUPATION, String SCHOOL, String BIRTHPLACE)
-            : base(STR, DEX, INT, CON, APP, POW, SIZ, EDU,
-            IDEA, LUCK, KNOWLEDGE, DB,
-            MaxHP, HP, MaxMP, MP, MaxSAN, SAN,
-            SEX, AGE, OCCUPATION, SCHOOL, BIRTHPLACE)
+        public HomoSapiens(String name, Int16 strength, Int16 dexterity, Int16 intelligence, Int16 constitution, Int16 appearance, Int16 power, Int16 size, Int16 education,
+            Int16 idea, Int16 luck, Int16 knowledge, Dice damageBonus,
+            Int16 maxHitPoint, Int16 hitPoint, Int16 maxMagicPoint, Int16 magicPoint, Int16 maxSanityPoint, Int16 sanityPoint,
+            Sex sexuality, Int64 age, String occupation, String school, String birthPlace)
+            : base(strength, dexterity, intelligence, constitution, appearance, power, size, education,
+            idea, luck, knowledge, damageBonus,
+            maxHitPoint, hitPoint, maxMagicPoint, magicPoint, maxSanityPoint, sanityPoint,
+            sexuality, age, occupation, school, birthPlace)
         {
-            _name = NAME;
+            _name = name;
         }
 
         private Dictionary<String, Int16> _dict1 = new Dictionary<String, Int16>();
