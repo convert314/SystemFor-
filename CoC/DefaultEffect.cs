@@ -32,14 +32,14 @@ namespace CoC
             return;
         }
 
-        public IEffectable[] PartialEffects
+        public IEffectable[] PartialEffectables
         {
             get { return null; }
         }
 
-        public bool IsPartialExecutable(News news, out long index)
+        public bool IsPartialExecutable(News news, out Int64[] index)
         {
-            index = -1;
+            index = new Int64[0];
             return false;
         }
 
