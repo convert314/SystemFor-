@@ -8,34 +8,20 @@ namespace CoC
 {
     public sealed class DefaultEffect : IEffectable
     {
-        private static readonly DefaultEffect _instance = new DefaultEffect();
-
         private DefaultEffect() { }
 
-        public static DefaultEffect Instance
-        {
-            get { return _instance; }
-        }
+        public static DefaultEffect Instance { get; } = new DefaultEffect();
 
-        public IGameObject Owner
-        {
-            get { return null; }
-        }
+        public IGameObject Owner => null;
 
-        public bool IsExecutable(News news)
-        {
-            return true;
-        }
+        public bool IsExecutable(News news) => false;
 
         public void Execute(News news, IGameObject obj)
         {
             return;
         }
 
-        public IEffectable[] PartialEffectables
-        {
-            get { return null; }
-        }
+        public IEffectable[] PartialEffectables => null;
 
         public bool IsPartialExecutable(News news, out Int64[] index)
         {
@@ -43,10 +29,7 @@ namespace CoC
             return false;
         }
 
-        public string GetName(long securityClearance)
-        {
-            return String.Empty;
-        }
+        public string GetName(long securityClearance) => String.Empty;
 
         public string Id
         {
