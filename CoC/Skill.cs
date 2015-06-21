@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CoC.Skill
+namespace CoC
 {
     public class Skill : ISkill
     {
