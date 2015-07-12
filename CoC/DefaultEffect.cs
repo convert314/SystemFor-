@@ -31,29 +31,14 @@ namespace CoC
 
         public string GetName(long securityClearance) => String.Empty;
 
-        public string Id
-        {
-            get { return String.Empty; }
-        }
+        public string Id => String.Empty;
 
-        public string GetDescritption(long securityClearance)
-        {
-            return String.Empty;
-        }
+        public string GetDescritption(long securityClearance) => String.Empty;
 
-        public bool HasAttribute(string name, long securityClearance)
-        {
-            return false;
-        }
+        public bool HasAttribute(string name, long securityClearance) => false;
 
-        public IDisposable Subscribe(IObserver<News> observer)
-        {
-            return System.Reactive.Disposables.Disposable.Empty;
-        }
+        public IDisposable Subscribe(IObserver<News> observer) => System.Reactive.Disposables.Disposable.Empty;
 
-        public object GetAttribute(string name, long securityClearance)
-        {
-            return null;
-        }
+        public object GetAttribute(string name, long securityClearance) => null;
     }
 }

@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.22823.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChainSystem", "ChainSystem\ChainSystem.csproj", "{3A83A0B1-12DA-4A4C-BD9B-A61C4FC7E79F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoC.ChainSystem", "ChainSystem\CoC.ChainSystem.csproj", "{3A83A0B1-12DA-4A4C-BD9B-A61C4FC7E79F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoC", "CoC\CoC.csproj", "{081CBCC0-7592-4186-AAD2-60E8714106E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoC.Standard", "CoC.Standard\CoC.Standard.csproj", "{C8B4ECA2-EBE9-490B-B1B5-BEBEFC717B7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{081CBCC0-7592-4186-AAD2-60E8714106E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{081CBCC0-7592-4186-AAD2-60E8714106E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{081CBCC0-7592-4186-AAD2-60E8714106E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8B4ECA2-EBE9-490B-B1B5-BEBEFC717B7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8B4ECA2-EBE9-490B-B1B5-BEBEFC717B7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8B4ECA2-EBE9-490B-B1B5-BEBEFC717B7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8B4ECA2-EBE9-490B-B1B5-BEBEFC717B7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

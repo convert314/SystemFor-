@@ -9,7 +9,8 @@ namespace CoC
 {
     public class BasicStatus
     {
-        public BasicStatus() {
+        public BasicStatus()
+        {
             _sexuality = Sex.NoSex;
             _school = String.Empty;
             _occupation = String.Empty;
@@ -20,7 +21,8 @@ namespace CoC
         }
         public BasicStatus(Int16 strength, Int16 dexterity, Int16 intelligence, Int16 constitution, Int16 appearance, Int16 power, Int16 size, Int16 education,
             Int16 idea, Int16 luck, Int16 knowledge, Dice damageBonus, Int16 maxHitPoint, Int16 hitPoint, Int16 maxMagicPoint, Int16 magicPoint, Int16 maxSanityPoint, Int16 sanityPoint,
-            Sex sexuality, Int64 age, String occupation, String school, String birthPlace) {
+            Sex sexuality, Int64 age, String occupation, String school, String birthPlace)
+        {
             _fundamental = new FundamentalStatus(strength, dexterity, intelligence, constitution, appearance, power, size, education);
             _advanced = new AdvancedStatus(idea, luck, knowledge, damageBonus, maxHitPoint, hitPoint, maxMagicPoint, magicPoint, maxSanityPoint, sanityPoint);
             _sexuality = sexuality;
@@ -29,7 +31,8 @@ namespace CoC
             _school = school;
             _birthPlace = birthPlace;
         }
-        protected internal BasicStatus(FundamentalStatus fundamental, AdvancedStatus advanced, Sex sexuality, Int64 age, String occupation, String school, String birthPlace) {
+        protected internal BasicStatus(FundamentalStatus fundamental, AdvancedStatus advanced, Sex sexuality, Int64 age, String occupation, String school, String birthPlace)
+        {
             _fundamental = fundamental;
             _advanced = advanced;
             _age = age;
@@ -42,65 +45,24 @@ namespace CoC
 
         protected internal class FundamentalStatus
         {
-            private Int16 _strength;
-            private Int16 _dexterity;
-            private Int16 _intelligence;
-            private Int16 _constitution;
-            private Int16 _appearance;
-            private Int16 _power;
-            private Int16 _size;
-            private Int16 _education;
-            public Int16 Strength
-            {
-                get { return _strength; }
-                set { _strength = value; }
-            }
-            public Int16 Dexterity
-            {
-                get { return _dexterity; }
-                set { _dexterity = value; }
-            }
-            public Int16 Intelligence
-            {
-                get { return _intelligence; }
-                set { _intelligence = value; }
-            }
-            public Int16 Constitution
-            {
-                get { return _constitution; }
-                set { _constitution = value; }
-            }
-            public Int16 Appearance
-            {
-                get { return _appearance; }
-                set { _appearance = value; }
-            }
-            public Int16 Power
-            {
-                get { return _power; }
-                set { _power = value; }
-            }
-            public Int16 Size
-            {
-                get { return _size; }
-                set { _size = value; }
-            }
-            public Int16 Education
-            {
-                get { return _education; }
-                set { _education = value; }
-            }
-
+            public Int16 Strength { get; set; }
+            public Int16 Dexterity { get; set; }
+            public Int16 Intelligence { get; set; }
+            public Int16 Constitution { get; set; }
+            public Int16 Appearance { get; set; }
+            public Int16 Power { get; set; }
+            public Int16 Size { get; set; }
+            public Int16 Education { get; set; }
             public FundamentalStatus()
             {
-                _strength = (Int16)Dice.Cast(3, 6);
-                _dexterity = (Int16)Dice.Cast(3, 6);
-                _intelligence = (Int16)Dice.Cast(3, 6);
-                _constitution = (Int16)Dice.Cast(3, 6);
-                _appearance = (Int16)Dice.Cast(3, 6);
-                _power = (Int16)Dice.Cast(3, 6);
-                _size = (Int16)Dice.Cast(2, 6, 6);
-                _education = (Int16)Dice.Cast(3, 6, 3);
+                Strength = (Int16)Dice.Cast(3, 6);
+                Dexterity = (Int16)Dice.Cast(3, 6);
+                Intelligence = (Int16)Dice.Cast(3, 6);
+                Constitution = (Int16)Dice.Cast(3, 6);
+                Appearance = (Int16)Dice.Cast(3, 6);
+                Power = (Int16)Dice.Cast(3, 6);
+                Size = (Int16)Dice.Cast(2, 6, 6);
+                Education = (Int16)Dice.Cast(3, 6, 3);
             }
             public FundamentalStatus(
                 Int16 strength,
@@ -112,14 +74,14 @@ namespace CoC
                 Int16 size,
                 Int16 education)
             {
-                _strength = strength;
-                _dexterity = dexterity;
-                _intelligence = intelligence;
-                _constitution = constitution;
-                _appearance = appearance;
-                _power = power;
-                _size = size;
-                _education = education;
+                Strength = strength;
+                Dexterity = dexterity;
+                Intelligence = intelligence;
+                Constitution = constitution;
+                Appearance = appearance;
+                Power = power;
+                Size = size;
+                Education = education;
             }
         }
         /// <summary>
@@ -139,61 +101,27 @@ namespace CoC
             private Int16 _magicPoint;
             private Int16 _maxSanityPoint;
             private Int16 _sanityPoint;
-            public Int16 Idea
-            {
-                get { return _idea; }
-                set { _idea = value; }
-            }
-            public Int16 Luck
-            {
-                get { return _luck; }
-                set { _luck = value; }
-            }
-            public Int16 Knowledge
-            {
-                get { return _knowledge; }
-                set { _knowledge = value; }
-            }
-            public Dice DamageBonus
-            {
-                get { return _damageBonus; }
-                set { _damageBonus = value; }
-            }
-            public Int16 MaxHitPoint
-            {
-                get { return _maxHitPoint; }
-                set { _maxHitPoint = value; }
-            }
-            public Int16 HitPoint
-            {
-                get { return _hitPoint; }
-                set { _hitPoint = value; }
-            }
-            public Int16 MaxMagicPoint
-            {
-                get { return _maxMagicPoint; }
-                set { _maxMagicPoint = value; }
-            }
-            public Int16 MagicPoint
-            {
-                get { return _magicPoint; }
-                set { _magicPoint = value; }
-            }
-            public Int16 MaxSanityPoint
-            {
-                get { return _maxSanityPoint; }
-                set { _maxSanityPoint = value; }
-            }
+            public Int16 Idea { get; set; }
+            public Int16 Luck { get; set; }
+            public Int16 Knowledge { get; set; }
+            public Dice DamageBonus { get; set; }
+            public Int16 MaxHitPoint { get; set; }
+            public Int16 HitPoint { get; set; }
+            public Int16 MaxMagicPoint { get; set; }
+            public Int16 MagicPoint { get; set; }
+            public Int16 MaxSanityPoint { get; set; }
             public Int16 SanityPoint
             {
                 get { return _sanityPoint; }
                 set { _sanityPoint = value; }
             }
 
-            public AdvancedStatus(): this(new FundamentalStatus()) {
-            
+            public AdvancedStatus() : this(new FundamentalStatus())
+            {
+
             }
-            public AdvancedStatus(FundamentalStatus fund) {
+            public AdvancedStatus(FundamentalStatus fund)
+            {
                 _idea = (Int16)(5 * fund.Intelligence);
                 _luck = (Int16)(5 * fund.Appearance);
                 _knowledge = (Int16)(5 * fund.Education);
@@ -260,7 +188,8 @@ namespace CoC
                 Int16 maxMagicPoint,
                 Int16 magicPoint,
                 Int16 maxSanityPoint,
-                Int16 sanityPoint) {
+                Int16 sanityPoint)
+            {
                 _idea = idea;
                 _luck = luck;
                 _knowledge = knowledge;
